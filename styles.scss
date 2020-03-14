@@ -1,0 +1,370 @@
+//variables
+$skyBlue: #36A0E2;
+$avialinks-blue: #4aa692;
+$white: #ffffff;
+$casablanca: #f2b44d;
+$black: #262a31;
+$stardust: #949494;
+$athens-gray: #f5f7f9;
+$darkest-black: #000000;
+
+//general
+
+.main-text {
+  background: $athens-gray;
+  padding: 20px 0;
+  box-shadow: rgba(37, 42, 49, 0.16) 0px 0px 2px 0px, rgba(37, 42, 49, 0.12) 0px 2px 4px 0px;
+}
+
+#text-wrapper {
+  // margin-top: 40px;
+  width: 50%;
+  padding: 40px;
+  background: $white;
+
+  h2, h3 {
+    color: $black;
+    letter-spacing: 0.6px;
+  }
+
+  h2 {
+    font-size: 39px;
+  }
+
+  h3 {
+    margin-top: 32px;
+    font-size: 20px;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  table, tr, th, td {
+    border: 1px solid $avialinks-blue;
+    font-weight: 400;
+    padding: 8px;
+  }
+
+  th {
+    background: $avialinks-blue;
+    color: $white;
+  }
+
+  tr:nth-child(even){
+    background-color: $athens-gray;
+  }
+
+  th {
+    padding: 7px;
+  }
+
+   p {
+     line-height: 20pt;
+     text-align: justify;
+     margin-top: 27px;
+     color: $black;
+
+     a {
+       color: $black;
+       text-decoration: underline;
+     }
+
+     a:hover {
+       cursor: pointer;
+       color: $avialinks-blue;
+
+       -webkit-transition: background-color all 0.3s ease-in-out;
+       -moz-transition: background-color all 0.3s ease-in-out;
+       -o-transition: background-color all 0.3s ease-in-out;
+       transition: background-color all 0.3s ease-in-out;
+
+     }
+   }
+
+   ul {
+     margin-top: 24px;
+
+     li {
+       list-style-type:decimal;
+       color: $black;
+       padding-bottom: 8px;
+       text-align: justify;
+     }
+   }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+}
+
+header
+.header-wrapper {
+  margin: 0;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+
+    @media (max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+        .logo-block {
+          align-self: center;
+          flex-grow: 7;
+
+          // @media (min-width: 576px) {
+          //   padding: 20px 0 15px 15px;
+          //   align-self: flex-start;
+          // }
+
+          img {
+            width: 12em;
+          }
+        }
+
+        .right-block {
+          display: flex;
+          flex-grow: 3;
+          justify-content: space-between;
+
+        .navigation-block {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            padding: 0 5px;
+
+            a {
+              color: $black;
+              text-decoration: none;
+              cursor: pointer;
+              font-weight: 500;
+            }
+
+            a:hover {
+              cursor: pointer;
+              color: $avialinks-blue;
+
+              -webkit-transition: background-color all 0.3s ease-in-out;
+              -moz-transition: background-color all 0.3s ease-in-out;
+              -o-transition: background-color all 0.3s ease-in-out;
+              transition: background-color all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+          background-color: $white;
+          margin: auto;
+          padding: 30px;
+          border: 1px solid $stardust;
+          width: 45%;
+          border-radius: 4px;
+
+          .close {
+            color: $stardust;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+
+          .ask-booking {
+            display: flex;
+            flex-direction: column;
+
+            .wrapper {
+              display: flex;
+              justify-content: space-around;
+            }
+
+            .question-form {
+              margin-top: 30px;
+
+              display: flex;
+              flex-direction: column;
+
+              .form-control {
+                padding: 12px 0 0 0;
+              }
+            }
+
+            #toggleForm {
+              display: none;
+            }
+
+            a,button {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-decoration: none;
+              color: $skyBlue;
+              font-size: 17px;
+              padding-top: 15px;
+              border: 1px solid $skyBlue;
+              border-radius: 4px;
+              padding: 6px 0;
+              width: 180px;
+              outline: none;
+              font-family: sans-serif;
+            }
+
+            button:hover,
+            button:focus,
+            a:hover,
+            a:focus {
+              cursor: pointer;
+              color: $white;
+              border: 1px solid $skyBlue;
+              background: $skyBlue;
+              outline: none;
+              text-decoration: none;
+              font-family: sans-serif;
+              font-size: 17px;
+
+              -webkit-transition: background-color all 0.3s ease-in-out;
+              -moz-transition: background-color all 0.3s ease-in-out;
+              -o-transition: background-color all 0.3s ease-in-out;
+              transition: background-color all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .close:hover,
+        .close:focus {
+          color: $black;
+          text-decoration: none;
+          cursor: pointer;
+          -webkit-transition: background-color all 0.3s ease-in-out;
+          -moz-transition: background-color all 0.3s ease-in-out;
+          -o-transition: background-color all 0.3s ease-in-out;
+          transition: background-color all 0.3s ease-in-out;
+        }
+
+        .dropbtn {
+          outline: none;
+          color: $black;
+          background: $white;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+          color: $avialinks-blue;
+        }
+
+        .dropdown {
+
+          button {
+            background: $white;
+            color: $black;
+            border: 0;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0;
+
+            &:hover, &:focus, &:active {
+              outline: none;
+              color: $avialinks-blue;
+              background: $white;
+              border: 0!important;
+              box-shadow: 0!important;
+            }
+          }
+
+
+
+          img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+          }
+
+          .dropdown-menu {
+            background-color: $white;
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            border: 0;
+
+            a {
+              color: $black;
+              padding: 12px 16px;
+              text-decoration: none;
+            }
+
+            a:hover {
+              background-color: $avialinks-blue;
+              color: $white;
+
+              -webkit-transition: background-color all 0.3s ease-in-out;
+              -moz-transition: background-color all 0.3s ease-in-out;
+              -o-transition: background-color all 0.3s ease-in-out;
+              transition: background-color all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .social {
+          display: flex;
+          align-items: center;
+          list-style-type: none;
+          padding: 0;
+
+          li {
+            padding: 0 5px;
+
+            i {
+              color: $skyBlue;
+            }
+
+            i:hover {
+              cursor: pointer;
+              color: $avialinks-blue;
+
+              -webkit-transition: background-color all 0.3s ease-in-out;
+              -moz-transition: background-color all 0.3s ease-in-out;
+              -o-transition: background-color all 0.3s ease-in-out;
+              transition: background-color all 0.3s ease-in-out;
+            }
+          }
+        }
+
+  }
+}
