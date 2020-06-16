@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AVIALINKS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://kit.fontawesome.com/62d18def75.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="header-wrapper">
+
+          <div class="logo-block">
+            <a href="suomi-kzt.html"> <img src="pics/logo/logo2.jpg" alt="logo"> </a>
+          </div>
+
+          <div class="right-block">
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                <img src="pics/flags/finland.svg"> <span class="text">Suomi</span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="suomi-eur.html"><img src="pics/flags/finland.svg"> Suomi </a></li>
+                <li><a href="main-eng.html"><img src="pics/flags/united-kingdom.svg"> English </a></li>
+                <li><a href="rus-rub.html"><img src="pics/flags/russia.svg"> Русский </a></li>
+                <li><a href="svenska-sek.html"><img src="pics/flags/sweden.svg"> Svenska </a></li>
+                <li><a href="a-usd.html"><img src="pics/flags/usa.svg"> American English </a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                KZT ₸
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="suomi-kzt.html">KZT ₸</a></li>
+                <li><a href="suomi-eur.html">EUR €</a></li>
+                <li><a href="suomi-usd.html">USD $</a></li>
+                <li><a href="suomi-rub.html">RUB ₽</a></li>
+                <li><a href="suomi-gbp.html">GBP £</a></li>
+                <li><a href="suomi-sek.html">SEK kr</a></li>
+                <li><a href="suomi-uzs.html">UZS som</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button id="helpBtn" class="navigation-block">
+                <span class="text">Auta</span>
+                <span class="icon"><i class="fas fa-question-circle"></i></span>
+              </button>
+            </div>
+
+            <div class="dropdown">
+              <button id="subscribeBtn" class="navigation-block">
+                <span class="text">Merkitä</span>
+                <span class="icon"><i class="far fa-envelope-open"></i></span>
+              </button>
+            </div>
+
+            <div id="modal-help" class="modal">
+              <div class="modal-content">
+
+                  <div class="ask-booking">
+
+                    <div class="wrapper">
+                      <a href="https://www.kiwi.com/fi/help" target="_blank">Sinulla on varauksia</a>
+                      <button onclick="toggleButton()" type="button" name="button">Sinulla ei ole varauksia</button>
+                    </div>
+
+                  <div class="form-wrapper">
+                    <form id="toggleForm" class="gform" method="POST" data-email="example@email.net"
+                    action="https://script.google.com/macros/s/AKfycbxwxl2PQ8ftrDMErdXKwuG0Vy6DHsPriPESkWUfQw/exec">
+
+                    <div class="message">
+
+                      <div class="form-elements">
+                        <fieldset class="pure-group">
+                          <label for="name">Nimi: </label>
+                          <input id="name" name="name" placeholder="Koko nimi" required/>
+                        </fieldset>
+
+                        <fieldset class="pure-group">
+                          <label for="email">Sähköpostiosoite:</label>
+                          <input id="email" name="email" type="email" value="" placeholder="Esimerkiksi: your@email.com" required/>
+                          <span class="email-invalid" style="display:none">
+                            On oltava kelvollinen sähköpostiosoite</span>
+                        </fieldset>
+
+                        <fieldset class="pure-group">
+                          <label for="message">Viesti: </label>
+                          <textarea id="message" name="message" placeholder="Kirjoita kysymyksesi tähän..." required></textarea>
+                        </fieldset>
+
+                        <fieldset >
+                          <input type="checkbox" id="newsletters" name="newsletters" checked>
+                          <label for="newsletters">Tilaa uutiskirjeemme!</label>
+                        </fieldset>
+
+                        <button>Lähettää</button>
+                      </div>
+
+                      <div class="thankyou_message" style="display:none;">
+                        <h2>Kiitos, että otit yhteyttä meihin!
+                           Palaamme sinuun pian!</h2>
+                      </div>
+
+                      <div class="picture-block">
+                        <img src="pics/buy-cheap-tickets-travel.jpg" alt="Cheap flights support image">
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+                <span class="close-help close">&times;</span>
+              </div>
+            </div>
+
+            <div id="modal-subscribe" class="modal">
+              <div class="modal-content">
+                <div class="subscribe-wrapper">
+
+                  <h2>Lähetä tietosi:</h2>
+
+                    <form id="toggleForm" class="gform" method="POST" data-email="example@email.net"
+                    action="https://script.google.com/macros/s/AKfycbwcTkImoC9GdbTjntw5jCIuLJv_VDQ6nLqVckuEqA/exec">
+
+                      <div class="form-elements">
+                        <fieldset class="pure-group">
+                          <label for="name">Nimi: </label>
+                          <input id="name" name="name" placeholder="Koko nimi" required/>
+                        </fieldset>
+
+                        <fieldset class="pure-group">
+                          <label for="email">Sähköpostiosoite:</label>
+                          <input id="email" name="email" type="email" value="" placeholder="Esimerkiksi: your@email.com" required/>
+                          <span class="email-invalid" style="display:none">
+                            On oltava kelvollinen sähköpostiosoite</span>
+                        </fieldset>
+
+                        <button>Merkitä</button>
+                      </div>
+
+                      <div class="thankyou_message" style="display:none;">
+                        <h2>Kiitos! Tietojen lähetys onnistui!</h2>
+                      </div>
+                    </form>
+
+                </div>
+
+                <div class="picture-block">
+                  <img src="pics/cheap-flights-avialinks-com.jpg" alt="Cheap flights support image">
+                </div>
+
+                <span class="close-subscribe close">&times;</span>
+              </div>
+            </div>
+
+
+            <ul class="social">
+              <li><a href="" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
+              <li><a href="" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+            </ul>
+
+            <div id="hamburger-menu" class="hamburger-side-menu">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <i class="fas fa-times"></i>
+              </a>
+              <a class="link" href="terms-and-conditions-eng.html">Käyttöehdot</a>
+              <a class="link" href="private-policy-eng.html">Tietosuojakäytäntö</a>
+              <a class="link" href="#">Matkatarinat</a>
+              <ul class="social-side">
+                <li><a href="" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
+                <li><a href="" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="hamburgerButton" type="button" onclick="openNav()">
+                <i class="fas fa-bars"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <section class="main">
+      <div class="container">
+
+            <div id="widget-holder"></div>
+            <script data-affilid="smartairkiwiwidget" data-lang="fi" data-currency="KZT" data-width="100%" data-apigee-key="Ak6Ap9NE0FuLQGFKVAuOAKve156YMrmE" src="https://widget.kiwi.com/scripts/widget-search-iframe.js"></script>
+
+      </div>
+    </section>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/form-submission-handler.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/modal-help.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/modal-subscribe.js"></script>
+
+          <script data-cfasync="false" type="text/javascript"
+            src="js/hamburger-side-menu.js"></script>
+  </body>
+</html>

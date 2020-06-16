@@ -2,8 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AVIALINKS</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <script src="https://kit.fontawesome.com/62d18def75.js" crossorigin="anonymous"></script>
@@ -18,47 +21,119 @@
         <div class="header-wrapper">
 
           <div class="logo-block">
-            <a href="main-eng.html"> <img src="pics/logo/logo1.jpg" alt="logo"> </a>
+            <a href="main-eng.html"> <img src="pics/logo/logo2.jpg" alt="logo"> </a>
           </div>
 
           <div class="right-block">
 
-            <ul class="navigation-block">
-              <li> <a id="myBtn" href="#">Help</a> </li>
-            </ul>
+            <div class="dropdown">
+              <button id="helpBtn" class="navigation-block">
+                <span class="text">Help</span>
+                <span class="icon"><i class="fas fa-question-circle"></i></span>
+              </button>
+            </div>
 
-            <ul class="navigation-block">
-              <li><a href="#">Subscribe</a> </li>
-            </ul>
+            <div class="dropdown">
+              <button id="subscribeBtn" class="navigation-block">
+                <span class="text">Subscribe</span>
+                <span class="icon"><i class="far fa-envelope-open"></i></span>
+              </button>
+            </div>
 
-            <div id="myModal" class="modal">
+            <div id="modal-help" class="modal">
               <div class="modal-content">
-                <span class="close">&times;</span>
-                  <div class="ask-booking">
 
+                  <div class="ask-booking">
                     <div class="wrapper">
                       <a href="https://www.kiwi.com/en/help" target="_blank">Have a booking</a>
                       <button onclick="toggleButton()" type="button" name="button">Don't have a booking</button>
                     </div>
 
-                    <form action="MAILTO:vkislitsyna@gmail.com" method="post" enctype="text/plain" id="toggleForm" class="question-form" action="index.html" method="post">
-                      <div class="form-control">
-                        <label for="fname">First name:</label>
-                        <input type="text" id="name" name="name" placeholder="Name">
+                  <div class="form-wrapper">
+                    <form id="toggleForm" class="gform" method="POST" data-email="example@email.net"
+                    action="https://script.google.com/macros/s/AKfycbxwxl2PQ8ftrDMErdXKwuG0Vy6DHsPriPESkWUfQw/exec">
+
+                      <div class="message">
+
+                        <div class="form-elements">
+                          <fieldset class="pure-group">
+                            <label for="name">Name: </label>
+                            <input id="name" name="name" placeholder="Full Name" required/>
+                          </fieldset>
+
+                          <fieldset class="pure-group">
+                            <label for="email">Your Email Address:</label>
+                            <input id="email" name="email" type="email" value="" placeholder="For example: your@email.com" required/>
+                            <span class="email-invalid" style="display:none">
+                              Must be a valid email address</span>
+                          </fieldset>
+
+                          <fieldset class="pure-group">
+                            <label for="message">Message: </label>
+                            <textarea id="message" name="message" placeholder="Type your question here..." required></textarea>
+                          </fieldset>
+
+                          <fieldset >
+                            <input type="checkbox" id="newsletters" name="newsletters" checked>
+                            <label for="newsletters">Sign up for our newsletter!</label>
+                          </fieldset>
+
+                          <button>Send</button>
+                        </div>
+
+                        <div class="thankyou_message" style="display:none;">
+                          <h2>Thanks for contacting us!
+                            We will get back to you soon!</h2>
+                        </div>
+
+                        <div class="picture-block">
+                          <img src="pics/buy-cheap-tickets-travel.jpg" alt="Cheap flights support image">
+                        </div>
                       </div>
-                      <div class="form-control">
-                        <label for="lname">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Email">
-                      </div>
 
-                        <label for="lname">Your Question:</label>
-                        <textarea name="name" rows="2" cols="20" placeholder="Type your question here.."></textarea>
-
-
-                      <input type="submit" value="Submit">
                     </form>
-
                   </div>
+                </div>
+                <span class="close-help close">&times;</span>
+              </div>
+            </div>
+
+            <div id="modal-subscribe" class="modal">
+              <div class="modal-content">
+                <div class="subscribe-wrapper">
+
+                  <h2>Submit your data:</h2>
+
+                    <form id="toggleForm" class="gform" method="POST" data-email="example@email.net"
+                    action="https://script.google.com/macros/s/AKfycbwUs4GGjVZcPCpz6SMH_49TBkHC-mRXOFR6Dxuf/exec">
+
+                      <div class="form-elements">
+                        <fieldset class="pure-group">
+                          <label for="name">Name: </label>
+                          <input id="name" name="name" placeholder="Full Name" required/>
+                        </fieldset>
+
+                        <fieldset class="pure-group">
+                          <label for="email">Your Email Address:</label>
+                          <input id="email" name="email" type="email" value="" placeholder="For example: your@email.com" required/>
+                          <span class="email-invalid" style="display:none">
+                            Must be a valid email address</span>
+                        </fieldset>
+
+                        <button>Subscribe</button>
+                      </div>
+
+                      <div class="thankyou_message" style="display:none;">
+                        <h2>Thanks! Information has been successfully submitted!</h2>
+                      </div>
+                    </form>
+                </div>
+
+                <div class="picture-block">
+                  <img src="pics/cheap-flights-avialinks-com.jpg" alt="Cheap flights support image">
+                </div>
+
+                <span class="close-subscribe close">&times;</span>
               </div>
             </div>
 
@@ -67,15 +142,23 @@
               <li><a href="" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
             </ul>
 
+            <div id="hamburger-menu" class="hamburger-side-menu">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+                <i class="fas fa-times"></i>
+              </a>
+              <a class="link" href="terms-and-conditions-eng.html">Terms and conditions</a>
+              <a class="link" href="private-policy-eng.html">Privacy policy</a>
+              <a class="link" href="#">Travel stories</a>
+              <ul class="social-side">
+                <li><a href="" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
+                <li><a href="" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+              </ul>
+            </div>
+
             <div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+              <button class="hamburgerButton" type="button" onclick="openNav()">
                 <i class="fas fa-bars"></i>
               </button>
-              <ul class="dropdown-menu">
-                <li><a href="terms-and-conditions-eng.html">Terms and conditions</a></li>
-                <li><a href="private-policy-eng.html">Privacy policy</a></li>
-                <li><a href="#">Travel stories</a></li>
-              </ul>
             </div>
 
           </div>
@@ -83,8 +166,9 @@
       </div>
 
 
-
     </header>
+
+
     <section class="main main-text">
       <div id="text-wrapper" class="container">
 
@@ -463,45 +547,18 @@
             </ul>
 
           </li>
-
-
         </ul>
-
-
-
       </div>
     </section>
 
-    <script>
-      //modal popup window
-      var modal = document.getElementById("myModal");
-      var btn = document.getElementById("myBtn");
-      var span = document.getElementsByClassName("close")[0];
+    <script data-cfasync="false" type="text/javascript"
+      src="js/modal-help.js"></script>
 
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
+    <script data-cfasync="false" type="text/javascript"
+      src="js/modal-subscribe.js"></script>
 
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
+      <script data-cfasync="false" type="text/javascript"
+        src="js/hamburger-side-menu.js"></script>
 
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-      //popup window content
-      function toggleButton() {
-        var x = document.getElementById("toggleForm");
-        if (x.style.display === "block") {
-          x.style.display = "none";
-        } else {
-          x.style.display = "block";
-        }
-      }
-
-    </script>
   </body>
 </html>

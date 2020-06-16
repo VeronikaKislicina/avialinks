@@ -1,12 +1,13 @@
 //variables
-$skyBlue: #36A0E2;
 $avialinks-blue: #4aa692;
 $white: #ffffff;
 $casablanca: #f2b44d;
 $black: #262a31;
 $stardust: #949494;
 $athens-gray: #f5f7f9;
+$shuttle-gray: #59626B;
 $darkest-black: #000000;
+$silver: #ebeef2;
 
 //general
 
@@ -17,10 +18,13 @@ $darkest-black: #000000;
 }
 
 #text-wrapper {
-  // margin-top: 40px;
   width: 50%;
   padding: 40px;
   background: $white;
+
+  @media (max-width: 768px) {
+    width: 98%;
+  }
 
   h2, h3 {
     color: $black;
@@ -29,6 +33,10 @@ $darkest-black: #000000;
 
   h2 {
     font-size: 39px;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   h3 {
@@ -73,12 +81,10 @@ $darkest-black: #000000;
      a:hover {
        cursor: pointer;
        color: $avialinks-blue;
-
-       -webkit-transition: background-color all 0.3s ease-in-out;
-       -moz-transition: background-color all 0.3s ease-in-out;
-       -o-transition: background-color all 0.3s ease-in-out;
-       transition: background-color all 0.3s ease-in-out;
-
+       -webkit-transition: 0.3s ease-in-out;
+       -moz-transition: 0.3s ease-in-out;
+       -o-transition: 0.3s ease-in-out;
+       transition:  0.3s ease-in-out;
      }
    }
 
@@ -121,19 +127,24 @@ header
   display: flex;
   justify-content: space-between;
 
-    @media (max-width: 576px) {
+//////////////////////////////////////
+    @media (max-width: 767px) {
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
       }
 
         .logo-block {
           align-self: center;
           flex-grow: 7;
 
-          // @media (min-width: 576px) {
-          //   padding: 20px 0 15px 15px;
-          //   align-self: flex-start;
+          // @media (min-width: 771px) {
+          //   flex-grow: 3;
           // }
+
+          @media (max-width: 750px) {
+            // padding: 0 0 20px 0;
+            // align-self: flex-start;
+          }
 
           img {
             width: 12em;
@@ -145,134 +156,35 @@ header
           flex-grow: 3;
           justify-content: space-between;
 
-        .navigation-block {
-          display: flex;
-          align-items: center;
-          list-style-type: none;
-          padding: 0;
+          // @media (min-width: 771px) {
+          //   flex-grow: 7;
+          // }
 
-          li {
-            padding: 0 5px;
-
-            a {
-              color: $black;
-              text-decoration: none;
-              cursor: pointer;
-              font-weight: 500;
-            }
-
-            a:hover {
-              cursor: pointer;
-              color: $avialinks-blue;
-
-              -webkit-transition: background-color all 0.3s ease-in-out;
-              -moz-transition: background-color all 0.3s ease-in-out;
-              -o-transition: background-color all 0.3s ease-in-out;
-              transition: background-color all 0.3s ease-in-out;
-            }
-          }
-        }
-
-        .modal {
-          display: none;
-          position: fixed;
-          z-index: 1;
-          padding-top: 100px;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-          overflow: auto;
-          background-color: rgb(0,0,0);
-          background-color: rgba(0,0,0,0.4);
-        }
-
-        .modal-content {
-          background-color: $white;
-          margin: auto;
-          padding: 30px;
-          border: 1px solid $stardust;
-          width: 45%;
-          border-radius: 4px;
-
-          .close {
-            color: $stardust;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-          }
-
-          .ask-booking {
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+          @media (max-width: 767px) {
             display: flex;
-            flex-direction: column;
-
-            .wrapper {
-              display: flex;
-              justify-content: space-around;
-            }
-
-            .question-form {
-              margin-top: 30px;
-
-              display: flex;
-              flex-direction: column;
-
-              .form-control {
-                padding: 12px 0 0 0;
-              }
-            }
-
-            #toggleForm {
-              display: none;
-            }
-
-            a,button {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              text-decoration: none;
-              color: $skyBlue;
-              font-size: 17px;
-              padding-top: 15px;
-              border: 1px solid $skyBlue;
-              border-radius: 4px;
-              padding: 6px 0;
-              width: 180px;
-              outline: none;
-              font-family: sans-serif;
-            }
-
-            button:hover,
-            button:focus,
-            a:hover,
-            a:focus {
-              cursor: pointer;
-              color: $white;
-              border: 1px solid $skyBlue;
-              background: $skyBlue;
-              outline: none;
-              text-decoration: none;
-              font-family: sans-serif;
-              font-size: 17px;
-
-              -webkit-transition: background-color all 0.3s ease-in-out;
-              -moz-transition: background-color all 0.3s ease-in-out;
-              -o-transition: background-color all 0.3s ease-in-out;
-              transition: background-color all 0.3s ease-in-out;
-            }
+            // flex-direction: column;
+            align-items: center;
           }
-        }
 
-        .close:hover,
-        .close:focus {
+        .navigation-block {
+          background: $white;
           color: $black;
+          border: 0;
           text-decoration: none;
           cursor: pointer;
-          -webkit-transition: background-color all 0.3s ease-in-out;
-          -moz-transition: background-color all 0.3s ease-in-out;
-          -o-transition: background-color all 0.3s ease-in-out;
-          transition: background-color all 0.3s ease-in-out;
+          font-weight: 500;
+          padding: 0;
+
+          &:hover, &:focus, &:active {
+            outline: none;
+            cursor: pointer;
+            color: $avialinks-blue;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition:  0.3s ease-in-out;
+          }
         }
 
         .dropbtn {
@@ -286,9 +198,22 @@ header
 
         .dropbtn:hover, .dropbtn:focus {
           color: $avialinks-blue;
+          -webkit-transition: 0.3s ease-in-out;
+          -moz-transition: 0.3s ease-in-out;
+          -o-transition: 0.3s ease-in-out;
+          transition:  0.3s ease-in-out;
         }
 
         .dropdown {
+          @media (min-width: 771px) {
+              span.icon {display:none}
+              span.text {display:inline-block}
+          }
+
+          @media (max-width: 770px) {
+              span.icon {display:inline-block}
+              span.text {display:none}
+          }
 
           button {
             background: $white;
@@ -305,10 +230,12 @@ header
               background: $white;
               border: 0!important;
               box-shadow: 0!important;
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
             }
           }
-
-
 
           img {
             width: 20px;
@@ -319,9 +246,14 @@ header
           .dropdown-menu {
             background-color: $white;
             min-width: 160px;
+            margin-left: -40px;
             overflow: auto;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             border: 0;
+
+            // @media (max-width: 750px) {
+            //     border: 1px solid red;
+            //   }
 
             a {
               color: $black;
@@ -332,11 +264,10 @@ header
             a:hover {
               background-color: $avialinks-blue;
               color: $white;
-
-              -webkit-transition: background-color all 0.3s ease-in-out;
-              -moz-transition: background-color all 0.3s ease-in-out;
-              -o-transition: background-color all 0.3s ease-in-out;
-              transition: background-color all 0.3s ease-in-out;
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
             }
           }
         }
@@ -347,24 +278,168 @@ header
           list-style-type: none;
           padding: 0;
 
+          @media (max-width: 767px) {
+              display: none;
+            }
+
           li {
             padding: 0 5px;
 
             i {
-              color: $skyBlue;
+              color: $avialinks-blue;
             }
 
             i:hover {
               cursor: pointer;
-              color: $avialinks-blue;
-
-              -webkit-transition: background-color all 0.3s ease-in-out;
-              -moz-transition: background-color all 0.3s ease-in-out;
-              -o-transition: background-color all 0.3s ease-in-out;
-              transition: background-color all 0.3s ease-in-out;
+              color: darken($avialinks-blue, 15%);
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
             }
           }
         }
 
+        .hamburger-side-menu {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          background-color: $white;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding: 15px 10px 0 0;
+          display: flex;
+          flex-direction: column;
+
+          a {
+            color: $black;
+            padding: 12px 16px;
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+
+            &:hover {
+              color: $avialinks-blue;
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
+            }
+          }
+
+          .link {
+            min-width: 220px;
+          }
+
+          .closebtn {
+            display: flex;
+            align-self: flex-end;
+            font-size: 16px;
+            color: $avialinks-blue;
+            cursor: pointer;
+
+            &:hover {
+              color: darken($avialinks-blue, 20%);
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
+            }
+
+            i {
+              font-size: 24px;
+              color: $avialinks-blue;
+            }
+          }
+
+          .social-side {
+            padding: 10px 0 0 0;
+            display: none;
+
+            li {
+              list-style-type: none;
+            }
+
+            @media (max-width: 767px) {
+                display: flex;
+              }
+          }
+        }
+
+        .hamburgerButton {
+          background: $white;
+          color: $black;
+          border: 0;
+          text-decoration: none;
+          cursor: pointer;
+          font-weight: 500;
+          padding: 0;
+
+          &:hover, &:focus, &:active {
+            outline: none;
+            color: $avialinks-blue;
+            background: $white;
+            border: 0!important;
+            box-shadow: 0!important;
+            -webkit-transition: 0.3s ease-in-out;
+            -moz-transition: 0.3s ease-in-out;
+            -o-transition: 0.3s ease-in-out;
+            transition:  0.3s ease-in-out;
+          }
+        }
+
+        @media screen and (max-height: 450px) {
+          .hamburger-side-menu {padding-top: 15px;}
+          .hamburger-side-menu a {font-size: 18px;}
+        }
+  }
+}
+
+
+//error.html
+.error-wrapper {
+  display: flex;
+
+  img {
+    width: 140px;
+    margin: 40px 40px 40px 0;
+
+    @media (max-width: 767px) {
+        display: none;
+      }
+  }
+
+  .error-message-block {
+    // display: flex;
+    // flex-direction: column;
+
+    p {
+      margin: 20px auto;
+    }
+
+    a {
+      background: $avialinks-blue;
+      color: $white;
+      border: 1px solid $avialinks-blue;
+      border-radius: 3px;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: 500;
+      padding: 6px;
+
+      &:hover {
+        color: $avialinks-blue;
+        background: $white;
+        border: 1px solid $avialinks-blue;
+        -webkit-transition: 0.3s ease-in-out;
+        -moz-transition: 0.3s ease-in-out;
+        -o-transition: 0.3s ease-in-out;
+        transition:  0.3s ease-in-out;
+      }
+    }
   }
 }
