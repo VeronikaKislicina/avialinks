@@ -38,6 +38,8 @@
     .modal-content .gform .message {
       display: flex;
       justify-content: space-between; }
+      .modal-content .gform .message .form-elements {
+        width: 100%; }
       .modal-content .gform .message .picture-block {
         width: 40%;
         display: flex;
