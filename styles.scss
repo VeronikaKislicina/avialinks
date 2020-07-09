@@ -120,12 +120,24 @@ $silver: #ebeef2;
   }
 }
 
-header
+header {
+  position: fixed;
+  height: 60px;
+  background: $white;
+  width: 100%;
+  box-shadow: rgba(37, 42, 49, 0.16) 0px 0px 2px 0px, rgba(37, 42, 49, 0.12) 0px 2px 4px 0px;
+
+}
+
 .header-wrapper {
   margin: 0;
   padding: 18px 0;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 770px) {
+    margin: auto 15px auto 15px;
+  }
 
 //////////////////////////////////////
     @media (max-width: 767px) {
@@ -136,6 +148,25 @@ header
         .logo-block {
           align-self: center;
           flex-grow: 7;
+
+          .hotels {
+            margin-left: 15px;
+            color: $black;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+            padding: 0;
+
+            &:hover, &:focus, &:active {
+              outline: none;
+              cursor: pointer;
+              color: $avialinks-blue;
+              -webkit-transition: 0.3s ease-in-out;
+              -moz-transition: 0.3s ease-in-out;
+              -o-transition: 0.3s ease-in-out;
+              transition:  0.3s ease-in-out;
+            }
+          }
 
           // @media (min-width: 771px) {
           //   flex-grow: 3;
@@ -148,6 +179,10 @@ header
 
           img {
             width: 12em;
+
+            @media (max-width: 450px) {
+              width: 9em;
+            }
           }
         }
 
@@ -206,13 +241,22 @@ header
 
         .dropdown {
           @media (min-width: 771px) {
-              span.icon {display:none}
-              span.text {display:inline-block}
+              span.icon {
+                display: none;
+              }
+              span.text {
+                display: inline-block;
+              }
           }
 
           @media (max-width: 770px) {
-              span.icon {display:inline-block}
-              span.text {display:none}
+              span.icon {
+                display: inline-block;
+                padding-right: 7px;
+              }
+              span.text {
+                display: none;
+              }
           }
 
           button {
@@ -442,4 +486,8 @@ header
       }
     }
   }
+}
+
+.main {
+  padding-top: 59px;
 }

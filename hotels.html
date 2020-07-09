@@ -8,18 +8,19 @@
     <link rel="shortcut icon" type="image/x-icon" href="pics/logo/logo1.ico" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="hotels.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-TR3RCJR');</script>
-      <!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TR3RCJR');</script>
+    <!-- End Google Tag Manager -->
 
     <script src="https://kit.fontawesome.com/62d18def75.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   </head>
@@ -34,20 +35,23 @@
         <div class="header-wrapper">
 
           <div class="logo-block">
-            <a href="a-eur.html"> <img src="pics/logo/logo2.jpg" alt="logo"> </a>
+            <a class="logo" href="index.html"> <img src="pics/logo/logo2.jpg" alt="logo"></a>
+            <a class="hotels" href="hotels.html">Hotels</a>
           </div>
 
-          <div class="right-block">
+            <!-- <nav class="nav navbar-nav right-block"> -->
+            <div class="right-block">
+
             <div class="dropdown">
               <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                <img src="pics/flags/usa.svg"> <span class="text">American English</span>
+                <img src="pics/flags/united-kingdom.svg"><span class="text">English</span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="a-usd.html"><img src="pics/flags/usa.svg"> American English </a></li>
+                <li><a href="index.html"><img src="pics/flags/united-kingdom.svg"> English </a></li>
                 <li><a href="rus-rub.html"><img src="pics/flags/russia.svg"> Русский </a></li>
                 <li><a href="svenska-sek.html"><img src="pics/flags/sweden.svg"> Svenska </a></li>
                 <li><a href="suomi-eur.html"><img src="pics/flags/finland.svg"> Suomi </a></li>
-                <li><a href="index.html"><img src="pics/flags/united-kingdom.svg"> English </a></li>
+                <li><a href="a-usd.html"><img src="pics/flags/usa.svg"> American English </a></li>
               </ul>
             </div>
 
@@ -57,13 +61,13 @@
                 <span class="icon">€</span>
               </button>
               <ul class="dropdown-menu">
-                <li><a href="a-eur.html">EUR €</a></li>
-                <li><a href="a-usd.html">USD $</a></li>
-                <li><a href="a-gbp.html">GBP £</a></li>
-                <li><a href="a-rub.html">RUB ₽</a></li>
-                <li><a href="a-sek.html">SEK kr</a></li>
-                <li><a href="a-kzt.html">KZT ₸</a></li>
-                <li><a href="a-uzs.html">UZS som</a></li>
+                <li><a href="index.html">EUR €</a></li>
+                <li><a href="eng-usd.html">USD $</a></li>
+                <li><a href="eng-gbp.html">GBP £</a></li>
+                <li><a href="eng-rub.html">RUB ₽</a></li>
+                <li><a href="eng-sek.html">SEK kr</a></li>
+                <li><a href="eng-kzt.html">KZT ₸</a></li>
+                <li><a href="eng-uzs.html">UZS som</a></li>
               </ul>
             </div>
 
@@ -85,7 +89,6 @@
               <div class="modal-content">
 
                   <div class="ask-booking">
-
                     <div class="wrapper">
                       <a href="https://www.kiwi.com/en/help" target="_blank">Have a booking</a>
                       <button onclick="toggleButton()" type="button" name="button">Don't have a booking</button>
@@ -95,51 +98,50 @@
                     <form id="toggleForm" class="gform" method="POST" data-email="example@email.net"
                     action="https://script.google.com/macros/s/AKfycbxwxl2PQ8ftrDMErdXKwuG0Vy6DHsPriPESkWUfQw/exec">
 
-                    <div class="message">
+                      <div class="message">
 
-                      <div class="form-elements">
-                        <fieldset class="pure-group">
-                          <label for="name">Name: </label>
-                          <input id="name" name="name" placeholder="Full Name" required/>
-                        </fieldset>
+                        <div class="form-elements">
+                          <fieldset class="pure-group">
+                            <label for="name">Name: </label>
+                            <input id="name" name="name" placeholder="Full Name" required/>
+                          </fieldset>
 
-                        <fieldset class="pure-group">
-                          <label for="email">Your Email Address:</label>
-                          <input id="email" name="email" type="email" value="" placeholder="For example: your@email.com" required/>
-                          <span class="email-invalid" style="display:none">
-                            Must be a valid email address</span>
-                        </fieldset>
+                          <fieldset class="pure-group">
+                            <label for="email">Your Email Address:</label>
+                            <input id="email" name="email" type="email" value="" placeholder="For example: your@email.com" required/>
+                            <span class="email-invalid" style="display:none">
+                              Must be a valid email address</span>
+                          </fieldset>
 
-                        <fieldset class="pure-group">
-                          <label for="message">Message: </label>
-                          <textarea id="message" name="message" placeholder="Type your question here..." required></textarea>
-                        </fieldset>
+                          <fieldset class="pure-group">
+                            <label for="message">Message: </label>
+                            <textarea id="message" name="message" placeholder="Type your question here..." required></textarea>
+                          </fieldset>
 
-                        <!-- <fieldset >
-                          <input type="checkbox" id="newsletters" name="newsletters" checked>
-                          <label for="newsletters">Sign up for our newsletter!</label>
-                        </fieldset> -->
+                          <!-- <fieldset>
+                            <input type="checkbox" id="newsletters" name="newsletters" value="agreed" checked>
+                            <label for="newsletters">Sign up for our newsletter!</label>
+                          </fieldset> -->
 
-                        <button>Send</button>
+                          <button>Send</button>
+                        </div>
+
+                        <div class="thankyou_message" style="display:none;">
+                          <h2>Thanks for contacting us!
+                            We will get back to you soon!</h2>
+                        </div>
+
+                        <div class="picture-block">
+                          <img src="pics/buy-cheap-tickets-travel.jpg" alt="Cheap flights support image">
+                        </div>
                       </div>
 
-                      <div class="thankyou_message" style="display:none;">
-                        <h2>Thanks for contacting us!
-                          We will get back to you soon!</h2>
-                      </div>
-                      <div class="picture-block">
-                        <img src="pics/buy-cheap-tickets-travel.jpg" alt="Cheap flights support image">
-                      </div>
                     </form>
-                  </div>
                   </div>
                 </div>
                 <span class="close-help close">&times;</span>
               </div>
             </div>
-
-
-
 
             <div id="modal-subscribe" class="modal">
               <div class="modal-content">
@@ -170,7 +172,6 @@
                         <h2>Thanks! Information has been successfully submitted!</h2>
                       </div>
                     </form>
-
                 </div>
 
                 <div class="picture-block">
@@ -180,7 +181,6 @@
                 <span class="close-subscribe close">&times;</span>
               </div>
             </div>
-
 
             <ul class="social">
               <li><a href="" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
@@ -193,6 +193,7 @@
               </a>
               <a class="link" href="terms-and-conditions-eng.html">Terms and conditions</a>
               <a class="link" href="private-policy-eng.html">Privacy policy</a>
+              <a class="link" href="hotels.html">Hotels</a>
               <a class="link" href="#">Travel stories</a>
               <ul class="social-side">
                 <li><a href="" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
@@ -204,32 +205,99 @@
               <button class="hamburgerButton" type="button" onclick="openNav()">
                 <i class="fas fa-bars"></i>
               </button>
+              <a href=""></a>
             </div>
 
           </div>
+
+          <!-- </nav> -->
         </div>
       </div>
-
     </header>
-    <section class="main">
+
+    <section class="picture-block">
       <div class="container">
-        <div id="widget-holder"></div>
-        <div id="widget-holder"></div>
-        <script data-affilid="smartairkiwiwidget" data-lang="us" data-currency="EUR" data-width="100%" data-apigee-key="Ak6Ap9NE0FuLQGFKVAuOAKve156YMrmE" src="https://widget.kiwi.com/scripts/widget-search-iframe.js"></script>
+
+        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+
+
+        <div class="widget">
+          <!-- <script charset="utf-8" src="//www.travelpayouts.com/widgets/513a6ee9d3fc88006c80b98e519ded6d.js?v=1981" async></script> -->
+
+
+
+        </div>
+        <p>test</p>
+
 
       </div>
     </section>
 
-    <script data-cfasync="false" type="text/javascript"
-      src="js/form-submission-handler.js"></script>
+    <section class="text-block">
 
-    <script data-cfasync="false" type="text/javascript"
-      src="js/modal-help.js"></script>
+      <div class="container">
+        <div class="wrapper">
+          <h2>Book a hotel with AVIALINKS</h2>
+          <h3>Our main advantages</h3>
 
-    <script data-cfasync="false" type="text/javascript"
-      src="js/modal-subscribe.js"></script>
+          <div class="advantages-wrapper">
+            <div class="advantage-one">
+              <img src="" alt="">
+              <h5>All prices + discounts</h5>
+              <p>We compare hotel prices in 70 hotel reservation
+                agencies in one place.</p>
+            </div>
 
-    <script data-cfasync="false" type="text/javascript"
-      src="js/hamburger-side-menu.js"></script>
+            <div class="advantage-two">
+              <img src="" alt="">
+              <h5>No hidden fees</h5>
+              <p>AVIALINKS shows the final price of the hotel.
+                 No additional taxes and hidden fees.</p>
+            </div>
+
+            <div class="advantage-three">
+              <img src="" alt="">
+              <h5>Economically</h5>
+              <p>Hotel prices are constantly changing.
+                Subscribe to price changes of the desired hotel.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- <div class="hotel-picture-block">
+      <p>hello work</p>
+
+    </div> -->
+
+    <!-- <p>dskmdkdm</p>
+    <section class="photo1" background="pics/hotels/cheap-flights-avialinks.jpg">
+      <div class="container">
+
+        <p>fjodjf</p>
+        <a href="#">sjdfsdkmsdk</a>
+
+
+      </div>
+    </section> -->
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/form-submission-handler.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/modal-help.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/modal-subscribe.js"></script>
+
+        <script data-cfasync="false" type="text/javascript"
+          src="js/hamburger-side-menu.js"></script>
   </body>
 </html>
